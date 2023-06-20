@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flexbox Demo</title>
         <style>
             .header-container{
@@ -21,12 +21,47 @@
                 font-weight: bold;
                 padding: 10px;
             }
+            .main-container{
+                display: flex;
+                flex-direction: row wrap;
+                font-weight: bold;
+                text-align: center;
+            }
+            .main-containeritems{
+                background: deepskyblue;
+                text-align: left;
+            }
+            article{
+                padding: 10px;
+                margin: 10px;
+                background: aqua;
+            }
+            .sidebarleftitem{background: gold;}
+            .sidebarleftitem{background: hotpink;}
+
+            .sidebaritem{
+                flex: 1 0 0;
+                display: flex;
+            }
+            .main-containeritems{
+                flex: 30px;
+            }
+            .sidebarleftitem{
+                order: 1;
+            }
+            .main-containeritems{
+                order: 2;
+            }
+            .sidebarrightitem{
+                order: 3;
+            }
         </style>
     </head>
 
     <body>
-        <header class-"header-container"><h1>HEADER-Sample Flexbox Example</h1></header>
-        <div class="main-container"
+        <header class="header-container"><h1>HEADER-Sample Flexbox Example</h1></header>
+        <div class="main-container">
+        <sidebar class="sidebaritem sidebarleftitem"><div class="center"><p>Left Side Bar</p></div></sidebar>
         <section class="main-containeritems">
             <article>
                 <h2>First Article</h2>
@@ -50,4 +85,8 @@
                     to individual growth and our collective future</p>
             </article>
         </section>
+        <sidebar class="sidebaritem sidebarrightitem"><div class="center"><p>Right side bar</p></div></sidebar>
+        </div>
+        <footer class="footer-container"><h2>Footer</h2></footer>
     </body>
+</html>
